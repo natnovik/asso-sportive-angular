@@ -3,7 +3,6 @@ import { GymnasesAngular } from './../interface/gymnases';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { allowedNodeEnvironmentFlags } from 'process';
 
 @Injectable({
   providedIn: 'root'

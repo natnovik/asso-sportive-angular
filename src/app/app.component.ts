@@ -9,22 +9,12 @@ import { HttpResponse } from '@angular/common/http';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit{
-  public gymnasesAngular: GymnasesAngular[] = [];
-
-  constructor(private gymnaseService: GymnaseService){}
+ 
+  constructor(){}
 
   ngOnInit(){
-    this.getGymnases();
+    
   }
-  public getGymnases(): void {
-    this.gymnaseService.getGymnases().subscribe(
-      (response: GymnasesAngular[]) => {
-        this.gymnasesAngular = response;
-      },
-      (error: HttpResponse) => {
-        alert(error.message);
-      }
-      );
-  }
+
   
 }

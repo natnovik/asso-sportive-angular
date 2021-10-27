@@ -1,16 +1,19 @@
-<nav class="navbar navbar-light bg-primary">
+<nav class="navbar navbar-light btn-light">
     <div class="container-fluid">
-        <h1 style="color:aliceblue">List of gymnasiums</h1>
+        <h1 style="color:royalblue">List of gymnasiums</h1>
         <!-- <div class="search-gym">
             <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="&#61442;  Start search">
           </div> -->
         <div class="d-flex">
-            <button class="btn btn-success">Add Gymnasium</button>
+            <button class="btn btn-primary">Add Gymnasium</button>
         </div>
     </div>
 </nav>
-
-<table class="table table-striped">
+<!-- IN THE ORDER OF THE PAGE -->
+<div *ngFor="let gymnase of listGymnases">
+    <div>{{gymnase.nomGymnase}}</div>
+</div>
+<!-- <table class="table table-striped">
     <thead>
         <tr>
             <th scope="col">Id</th>
@@ -24,13 +27,13 @@
     </thead>
     <tbody>
         <tr>
-            <td>{{gymnases.idGymnase}}</td>
-            <td>{{gymnases.nomGymnase}}</td>
-            <td>{{gymnases.adress}}</td>
+            <td>{{gymnase.idGymnase}}</td>
+            <td>{{gymnase.nomGymnase}}</td>
+            <td>{{gymnase.adress}}</td>
             <td>{{}}</td>
             <td>{{}}</td>
             <td>{{}}</td>
             <td>{{}}</td>
         </tr>
     </tbody>
-</table>
+</table> -->
