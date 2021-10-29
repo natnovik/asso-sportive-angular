@@ -1,7 +1,7 @@
 import { Seance } from "./seance";
 
 export interface GymnasesAngular {
-    // id: string;
+    id: string;
     idGymnase: number;
     nomGymnase: string;
 	adresse: string;

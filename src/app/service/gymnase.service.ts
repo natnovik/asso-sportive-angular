@@ -13,15 +13,15 @@ export class GymnaseService {
   constructor(private http: HttpClient) {}
 
   public getGymnases():Observable<GymnasesAngular[]> {
-    return this.http.get<GymnasesAngular[]>(this.apiServerUrl + '/all'); 
+    return this.http.get<GymnasesAngular[]>(this.apiServerUrl + '/gymnases/all'); 
   }
   public addGymnase(newGymnase: GymnasesAngular):Observable<GymnasesAngular>{
-    return this.http.post<GymnasesAngular>(this.apiServerUrl + '/add', newGymnase);
+    return this.http.post<GymnasesAngular>(this.apiServerUrl + '/gymnases/add', newGymnase);
   }
   public updateGymnase(gymnase: GymnasesAngular):Observable<GymnasesAngular>{
-    return this.http.put<GymnasesAngular>(this.apiServerUrl + '/update', gymnase);
+    return this.http.put<GymnasesAngular>(this.apiServerUrl + '/gymnases/update', gymnase);
   }
   public deteleGymnase(gymnaseId: number):Observable<void>{
-    return this.http.delete<void>(this.apiServerUrl + '/delete' + gymnaseId);
+    return this.http.delete<void>(this.apiServerUrl + '/gymnases/delete' + gymnaseId);
   }
 }

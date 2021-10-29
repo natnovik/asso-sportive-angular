@@ -1,39 +1,64 @@
 <nav class="navbar navbar-light btn-light">
     <div class="container-fluid">
-        <h1 style="color:royalblue">List of gymnasiums</h1>
-        <!-- <div class="search-gym">
-            <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="&#61442;  Start search">
-          </div> -->
+        <div>
+            <h1 style="color:royalblue">List of gymnasiums</h1>
+                <!-- <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="&#61442;  Start search">
+                 -->
+                 <div class="input-group col-md-4">
+                    <input class="form-control py-2 border-right-0 border" type="search" value="search" id="example-search-input">
+                    <span class="input-group-append">
+                      <button class="btn btn-outline-secondary border-left-0 border" type="button">
+                            <i class="fa fa-search"></i>
+                      </button>
+                    </span>
+                </div>
+           
+        </div>
+           
         <div class="d-flex">
-            <button class="btn btn-primary">Add Gymnasium</button>
+            <button class="btn btn-lg btn-primary mb-2">Add Gymnasium</button>
         </div>
     </div>
 </nav>
 <!-- IN THE ORDER OF THE PAGE -->
-<div *ngFor="let gymnase of listGymnases">
-    <div>{{gymnase.nomGymnase}}</div>
-</div>
-<!-- <table class="table table-striped">
+
+<table class="table table-striped">
     <thead>
         <tr>
-            <th scope="col">Id</th>
+            <th scope="col">Id</th> 
             <th scope="col">Nom</th>
             <th scope="col">Adress</th>
             <th scope="col">Ville</th>
             <th scope="col">Surface</th>
             <th scope="col">Seance</th>
             <th scope="col">Actions</th>
+            <!--<th style="width: 30%">Id</th>-->
         </tr>
     </thead>
-    <tbody>
-        <tr>
+    <tbody >
+        <tr *ngFor="let gymnase of listGymnases">
             <td>{{gymnase.idGymnase}}</td>
             <td>{{gymnase.nomGymnase}}</td>
-            <td>{{gymnase.adress}}</td>
-            <td>{{}}</td>
-            <td>{{}}</td>
-            <td>{{}}</td>
-            <td>{{}}</td>
+            <td>{{gymnase.adresse}}</td>
+            <td>{{gymnase.ville}}</td>
+            <td>{{gymnase.surface}}</td>
+            <td><select class="select bg-white border-start-0 border" data-mdb-filter="true">
+                <option value="1">samedi 9h - "Basket Ball"</option>
+                <option value="2">lundi 9h - "Hand Ball"</option>
+                <option value="3">lundi 10h - "Hand Ball"</option>
+                
+              </select></td>
+            <td>
+                <!--routerLink="/gymnases/update/{{gymnase.id}}" ???-->
+                 <a routerLink="/gymnases/update/{{gymnase.id}}" >
+                    <span class="glyphicon glyphicon-pencil"></span>
+                 </a>
+                 <a><i class="fas fa-trash" style="color: red"></i></a>
+                <!-- <button class="btn btn-danger">Delete</button> -->
+            </td>
         </tr>
     </tbody>
-</table> -->
+
+</table> 
+
+
